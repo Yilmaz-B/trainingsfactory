@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+
+    <div class="container my-5 py-5 ">
+        {{ include("dashboard/admin.html.twig") }}
+        <a class="btn btn-success" href="{{ path('admin_insert_member') }}">Add member</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Street</th>
+                <th scope="col">Place</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+            </thead>
+            {% for member in members %}
+            <tbody>
+            <tr>
+                <th scope="row">{{ member.username }}</th>
+                <td>{{ member.firstname }}</td>
+                <td>{{ member.lastname }}</td>
+                <td>{{ member.dateofbirth | date }}</td>
+                <td>{{ member.street }}</td>
+                <td>{{ member.place }}</td>
+                <td><a href="{{ path('admin_update_member', {id: member.id}) }}" class="btn btn-primary btn-sm">Update</a></td>
+                <td><a href="{{ path('admin_delete_member', {id: member.id}) }}" class="btn btn-danger btn-sm">Delete</a></td>
+            </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

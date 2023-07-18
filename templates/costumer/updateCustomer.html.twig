@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        {{ include("dashboard/customer.html.twig") }}
+        {{ form_start(userForm) }}
+        {{ form_widget(userForm) }}
+        {{ form_end(userForm) }}
+    </div>
+{% endblock %}

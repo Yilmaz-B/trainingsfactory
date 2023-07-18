@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        {% block nav %}
+                <nav class="navbar  navbar-expand-lg bg-black navbar-dark  sticky-top ">
+                    <div class="container container-sm container-md  navbar-fixed-top">
+                        <span href="{{ path("app_home") }}" class="navbar-brand nav-link"> <a href="#" class=" logo text-success">Training</a>factory</span>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse flex-row-reverse " id="navbar">
+                            <ul class="navbar-nav " id="navbar">
+                                <li class="nav-item ">
+                                    <a href="{{ path("app_home") }}" class="nav-link text-white">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-white" href="#sporten">Sporten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#team" class="nav-link text-white">Team</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contact" class="nav-link text-white">Contact</a>
+                                </li>
+                                {% if  app.user %}
+                                <li class="nav-item">
+                                    <a href="{{ path('app_dashboard') }}" class="nav-link text-white">dashboard</a>
+                                </li>
+                                {% endif %}
+                                <li class="nav-item">
+                                    {% if not app.user %}
+                                        <a href="{{ path('app_login') }}" class="nav-link text-white">Login</a>
+                                    {% else %}
+                                        <a href="{{ path('app_logout') }}" class="nav-link text-white">Logout</a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}
+            <footer class="mt-auto w-100 ">
+                <section class="pt-5 bg-light ">
+                    <div class="d-grid container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <h1 class=""><small class="text-success">Training</small>factory</h1>
+                                <p class="pt-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                    doloremque laudantium,
+                                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                                <div class="d-flex gap-3 pt-2">
+                                    <button class="btn border border-rounded border-dark rounded-pill px-3">
+                                        <a href="#"><i class="bi bi-facebook text-dark"></i></a>
+                                    </button>
+                                    <button class="btn border border-rounded border-dark rounded-pill px-3">
+                                        <a href="#"><i class="bi bi-twitter text-dark"></i></a>
+                                    </button>
+                                    <button class="btn border border-rounded border-dark rounded-pill px-3">
+                                        <a href="#"><i class="bi bi-instagram text-dark"></i></a>
+                                    </button>
+                                    <button class="btn border border-rounded border-dark rounded-pill px-3">
+                                        <a href="#"><i class="bi bi-linkedin text-dark"></i></a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="footer-content">
+                                    <div class="footer-head">
+                                        <h4>information</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                        </p>
+                                        <div class="footer-contacts">
+                                            <p><span>Tel:</span> +123 456 789</p>
+                                            <p><span>Email:</span> contact@example.com</p>
+                                            <p><span>Working Hours:</span> 9am-5pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <h4>Instagram</h4>
+                                <div class="row ">
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/5.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4 p-1">
+                                        <a href="#"><img class="w-100 h-100" src="../img/portfolio/6.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+
+        {% endblock %}
+
+    </body>
+
+<style>
+    .logo {
+        text-decoration: none;
+    }
+
+    header {
+        position: fixed;
+        z-index: 2222;
+    }
+
+    h2:after {
+        position: absolute;
+        content: "";
+        display: block;
+        background: #212529;
+    }
+
+    .carouselImage {
+        opacity: 0.5 !important;
+    }
+
+    #carousel-div {
+        background-color: black !important;
+    }
+
+    .withUsDiv {
+        background-color: black !important;
+    }
+
+    .About-ebusiness {
+        background: #f3f1fa;
+    }
+
+    .bi-check-lg {
+        color: rgb(116, 240, 116);
+    }
+
+    .services:after {
+        position: absolute;
+        content: "";
+        display: block;
+        background: #212529;
+    }
+
+    .Pricing li .bi-check-lg {
+        color: #0dcaf0;
+    }
+
+    .reviewsSection {
+        height: 30rem !important;
+    }
+
+    .rounded-indicators button {
+        border-radius: 50% !important;
+        width: 0.8rem !important;
+        height: 0.8rem !important;
+        background-color: #ffffff !important;
+    }
+
+    .rounded-indicators [aria-current] {
+        background-color: #0dcaf0 !important;
+    }
+
+</style>
+</html>

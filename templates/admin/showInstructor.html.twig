@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="container my-5 py-5 ">
+        {{ include("dashboard/admin.html.twig") }}
+        <a class="btn btn-success" href="{{ path('admin_insert_instructor') }}">Add instructor</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Werkt sinds</th>
+                <th scope="col">Salaris</th>
+                <th scope="col">BSN</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+            </thead>
+            {% for instructor in instructors %}
+                <tbody>
+                <tr>
+                    <th scope="row">{{ instructor.username }}</th>
+                    <td>{{ instructor.firstname }}</td>
+                    <td>{{ instructor.lastname }}</td>
+                    <td>{{ instructor.dateofbirth | date('d-m-Y')  }}</td>
+                    <td>{{ instructor.hiringdate |date('d-m-Y') }}</td>
+                    <td>{{ instructor.salary }}</td>
+                    <td>{{ instructor.socialsecnumber }}</td>
+                    <td><a href="{{ path('admin_update_instructor', {id: instructor.id}) }}" class="btn btn-primary btn-sm">Update</a></td>
+                    <td><a href="{{ path('admin_delete_instructor', {id: instructor.id}) }}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

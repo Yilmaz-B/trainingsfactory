@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+
+    <div class="container my-5 py-5 ">
+        {{ include("dashboard/instructor.html.twig") }}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="col">Gebruikersnaam</th>
+                    <td>{{ userInfo.username }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Voornaam</th>
+                    <td>{{ userInfo.firstname }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Achternaam</th>
+                    <td>{{ userInfo.lastname }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Geboortedatum</th>
+                    <td>{{ userInfo.dateofbirth | date }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Adres</th>
+                    <td>{{ userInfo.street }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Plaats</th>
+                    <td>{{ userInfo.place }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">In dienst sinds</th>
+                    <td>{{ userInfo.hiringdate | date}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Salaris</th>
+                    <td>{{ userInfo.salary }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">BSN-nummer</th>
+                    <td>{{ userInfo.socialsecnumber }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <td><a class="btn btn-primary" href="{{ path('instructor_update_instructor', {id: userInfo.id}) }}">Update</a></td>
+    </div>
+{% endblock %}

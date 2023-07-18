@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-flex">
+                        <div class="flex-grow-1 bg-register-image"
+                             style="background-image: url('/img/login/image3.jpeg');">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Create an Account!</h4>
+                            </div>
+                            {{ form_start(registrationForm) }}
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    {{ form_row(registrationForm.username) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(registrationForm.plainPassword) }}
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    {{ form_row(registrationForm.firstname) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(registrationForm.lastname) }}
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    {{ form_row(registrationForm.street) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(registrationForm.place) }}
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                {{ form_row(registrationForm.dateofbirth) }}
+                            </div>
+                            <div class="mb-3 row">
+                                {{ form_row(registrationForm.agreeTerms) }}
+                            </div>
+                            <button class="btn btn-primary d-block btn-user w-100" type="submit">Register
+                                    Account
+                            </button>
+                                <hr>
+                            {{ form_end(registrationForm) }}
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="{{ path('app_login') }}">
+                                    Already have an account? Login!
+                                </a>
+                            </div>
+                        <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    <h1>Register</h1>#}
+
+{#    {{ form_start(registrationForm) }}#}
+{#        {{ form_row(registrationForm.username) }}#}
+{#        {{ form_row(registrationForm.plainPassword) }}#}
+{#        {{ form_row(registrationForm.firstname) }}#}
+{#        {{ form_row(registrationForm.lastname) }}#}
+{#        {{ form_row(registrationForm.dateofbirth) }}#}
+{#        {{ form_row(registrationForm.street) }}#}
+{#        {{ form_row(registrationForm.place) }}#}
+{#        {{ form_row(registrationForm.agreeTerms) }}#}
+{#        {{ form_row(registrationForm.Submit) }}#}
+{#    {{ form_end(registrationForm) }}#}
+{% endblock %}

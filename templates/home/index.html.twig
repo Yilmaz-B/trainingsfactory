@@ -1,0 +1,222 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <!--------------------------------------carousel---------------------->
+    <section id="home" class="w-100 vh-100  mx-auto">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators ">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner mb-4  " >
+                <div class="carousel-item  active d-flex justify-content-center " id="carousel-div">
+                    <img src="/img/home/carousel_1.jpg" class="d-block w-100 vh-100  carouselImage" alt="...">
+
+                </div>
+                <div class="carousel-item " id="carousel-div">
+                    <img src="/img/home/carousel_1.jpg" class="d-block w-100 vh-100 carouselImage" alt="...">
+                    <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center d-block flex-100 left-0 h-100">
+
+                    </div>
+                </div>
+                <div class="carousel-item " id="carousel-div">
+                    <img src="/img/home/carousel_1.jpg" class="d-block w-100 vh-100 carouselImage " alt="...">
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- ------------------------------------------------ Our services -------------------------------- -->
+    <section class="p-5 container" id="service">
+        <div class="row">
+            <div class="d-grid col-12 justify-content-center font-weight-bold">
+                <h2 class="text-center services"><strong>gedragsregels</strong> </h2>
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="service-item">
+                        <p class="text-center">
+                            Toon respect: Respecteer je trainers, mede-vechters en de faciliteit. Volg de instructies van de trainers op en gedraag je respectvol ten opzichte van anderen, ongeacht hun vaardigheidsniveau.
+                        </p>
+                    </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="service-item ">
+
+                    <p class="text-center">
+
+                        Veiligheid voorop: Veiligheid is van het grootste belang in een MMA-gym. Volg de veiligheidsrichtlijnen en gebruik de juiste beschermende uitrusting, zoals handschoenen, mondbeschermer en scheenbeschermers. Respecteer de fysieke grenzen van je trainingspartners en zorg ervoor dat je geen letsel toebrengt aan anderen.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="service-item ">
+                    <p class="text-center">
+                        Hygiëne: Zorg voor een goede persoonlijke hygiëne. Zorg ervoor dat je schoon bent, kort je nagels regelmatig en draag schone kleding. Dit draagt bij aan een hygiënische en gezonde trainingsomgeving.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="service-item ">
+                    <p class="text-center">
+                        Discipline: Kom op tijd voor de lessen en wees toegewijd aan je training. Volg de trainingsplannen en voer de oefeningen serieus uit. Wees gedisciplineerd en geef nooit op, zelfs als het moeilijk wordt.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="service-item ">
+
+                    <p class="text-center">
+                        Teamgeest: Moedig en steun je trainingspartners aan. MMA is een teamsport en het opbouwen van een ondersteunende gemeenschap is essentieel. Help anderen om beter te worden en leer van elkaar.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="service-item ">
+
+                    <p class="text-center">
+                        Luister naar je lichaam: Luister altijd naar je lichaam en voorkom overbelasting of blessures. Als je pijn voelt, geef dit dan aan bij je trainer en neem de nodige rust om te herstellen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------------------------------------Our Team-------------------------------------------------- -->
+    <section class="p-5" id="team">
+        <div class="container">
+            <div class="d-grid col-12 justify-content-center font-weight-bold ">
+                <h2 class="text-center services"><strong>Our Special Team</strong> </h2>
+            </div>
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-3 m-0 mb-4">
+                        <div class="card m-0 w-100">
+                            <img src="/img/team/1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-center h4">
+                                    Jhon Mickel
+                                </p>
+                                <p class="card-text text-center">Instructeur</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-3 mb-4">
+                        <div class="card w-100">
+                            <img src="/img/team/2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-center h4">
+                                    andrew Arnold
+                                </p>
+                                <p class="card-text text-center">Instructeur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-3 mb-4">
+                        <div class="card w-100">
+                            <img src="/img/team/3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-center h4">
+                                    Lellien linda
+                                </p>
+                                <p class="card-text text-center">Instructeur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-3 mb-4">
+                        <div class="card w-100">
+                            <img src="/img/team/4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-center h4">
+                                    Jhon Powel
+                                </p>
+                                <p class="card-text text-center">Instructeur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- ------------------- sporten ------------------------------ -->
+<div id="sporten" class="row">
+    <div class="d-grid col-12 justify-content-center font-weight-bold ">
+        <h2 class="text-center "><strong>Pricing Table</strong> </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="d-flex w-100 justify-content-center ">
+        <div class="d-flex row row-cols-3 mt-5 justify-content-center gap-5">
+            {% for trainings in trainings %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ trainings.name }}</h5>
+                        <p class="card-text">{{ trainings.decription }}</p>
+                        <a href="{{ path("customer_lesson") }}" class="btn btn-primary">Inschrijven</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- ------------------- Contact us ------------------------------ -->
+    <section class="pb-4">
+        <div class="container" id="contact">
+            <div class="d-grid col-12 justify-content-center font-weight-bold ">
+                <h2 class="text-center services"><strong>Contact Us</strong> </h2>
+            </div>
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 text-center">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.967119362072!2d4.246820315674542!3d52.043911779154286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b171c67606f3%3A0xaeb5e1f64b139c0e!2sTinwerf%2C%20Den%20Haag!5e0!3m2!1snl!2snl!4v1655110097879!5m2!1snl!2snl"
+                                width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp">
+                            </div>
+                        </form>
+                        <form>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp">
+                            </div>
+                        </form>
+                        <form>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

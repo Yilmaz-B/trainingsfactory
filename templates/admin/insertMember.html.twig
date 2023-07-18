@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        {{ include("dashboard/admin.html.twig") }}
+        {{ form_start(insertForm) }}
+        {{ form_widget(insertForm) }}
+        {{ form_end(insertForm) }}
+    </div>
+{% endblock %}

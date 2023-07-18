@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="container vh-75 text-center">
+        {{ include("dashboard/instructor.html.twig") }}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">naam</th>
+                <th scope="col">tijd</th>
+                <th scope="col">datum</th>
+                <th scope="col">locatie</th>
+                <th scope="col"> updaten</th>
+                <th scope="col"> verwijderen</th>
+            </tr>
+            </thead>
+            {% for lesson in lessons %}
+                <tbody>
+                <tr>
+                    <td>{{ lesson.training.name }}</td>
+                    <td>{{ lesson.time | date('H:i') }}</td>
+                    <td>{{ lesson.date |date('d-m-Y') }}</td>
+                    <td>{{ lesson.location }}</td>
+                    <td><a href="{{ path('instructor_update_lesson', {id: lesson.id}) }}" class="btn btn-primary btn-sm">Update</a></td>
+                    <td><a href="{{ path('instructor_delete_lesson', {id: lesson.id}) }}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

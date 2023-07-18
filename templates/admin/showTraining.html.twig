@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="container vh-75">
+        {{ include("dashboard/admin.html.twig") }}
+        <td><a href="{{ path('admin_insert_training') }}" class="btn btn-primary">Insert</a></td>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Naam</th>
+                <th scope="col">Beschrijving</th>
+                <th scope="col">Tijd</th>
+                <th scope="col">Kosten</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            {% for training in training %}
+                <tbody>
+                <tr>
+                    <td>{{ training.name }}</td>
+                    <td>{{ training.decription }}</td>
+                    <td>{{ training.duration }} min</td>
+                    <td>€{{ training.extracosts }}</td>
+                    <td><a href="{{ path('admin_update_training', {id: training.id}) }}" class="btn btn-primary btn-sm">Update</a></td>
+                    <td><a href="{{ path('admin_delete_training', {id: training.id}) }}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}
